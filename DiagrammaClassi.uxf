@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <help_text/>
+  <zoom_level>5</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>290</x>
+      <y>355</y>
+      <w>480</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Cliente
+--
+- username: StringProperty
+- password: StringProperty
+- cognome: StringProperty
+- nome: StringProperty
+- data: StringProperty
+- codFis: StringProperty
+- abbonamento: Abbonamento
+- scheda: Scheda
+--
++ Cliente(username: String, password: String, cognome: String, nome: String, data: String, codFis: String)
++ Cliente(username: String, password: String, cognome: String, nome: String, data: String, codFis: String, tipoAbbonamento: String, scadenza: String, tipoScheda: String)
++ Cliente(username: String, password: String, cognome: String, nome: String, data: String, codFis: String, tipo: String, scandenza: String)
++ aggiungiAbbonamento(durata: int, tipo: String): void
++ rimuoviAbbonamento(): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>515</y>
+      <w>140</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>Scheda
+--
+- tipo: String
+- giorno1: ArrayList&lt;String&gt;
+- giorno2: ArrayList&lt;String&gt;
+- giorno3: ArrayList&lt;String&gt;
+--
++ Scheda(tipo: String)
++ eserciziGiorno1Calisthenics(): void
++ eserciziGiorno2Calisthenics(): void
++ eserciziGiorno3Calisthenics(): void
++ eserciziGiorno1Bodybuilding(): void
++ eserciziGiorno2Bodybuilding(): void
++ eserciziGiorno3Bodybuilding(): void
++ eserciziGiorno1Powerlifting(): void
++ eserciziGiorno2Powerlifting(): void
++ eserciziGiorno3Powerlifting(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>785</x>
+      <y>390</y>
+      <w>140</w>
+      <h>75</h>
+    </coordinates>
+    <panel_attributes>SchedeController
+--
+- app: MainApp
+- cliente: Cliente    
+- rbCali: RadioButton @FXML 
+- rbBody: RadioButton @FXML 
+- rbPower: RadioButton @FXML 
+--
++ confermaScheda(): void @FXML
++ esci(): void @FXML
+
+group=group-0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>725</x>
+      <y>335</y>
+      <w>140</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>260.0;110.0;260.0;10.0;10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>180</y>
+      <w>340</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>GestioneClienti
+--
+- clienti: ObservableList&lt;Cliente&gt;
+--
++ leggiFile(): void
++ aggiungiCliente(username: String, password: String, cognome: String, nome: String, data: String, codFis: String): void
++ scriviCliente(username: String, password: String, cognome: String, nome: String, data: String, codFis: String): void
++ riscriviClienti(): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>525</x>
+      <y>230</y>
+      <w>15</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>200</x>
+      <y>335</y>
+      <w>140</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0;260.0;10.0;260.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>135</x>
+      <y>385</y>
+      <w>140</w>
+      <h>115</h>
+    </coordinates>
+    <panel_attributes>AbbonamentoController
+--
+- app: MainApp
+- cliente: Cliente  
+- btnEsci: Button @FXML
+- numCarta: TextField @FXML
+- cvc: TextField @FXML
+- scadenzaCarta: TextField @FXML
+- tipoAbb: ChoiceBox @FXML    
+- durataAbb: ChoiceBox @FXML 
+- prezzoTotale: Label @FXML     
+--
++ setTotale(): void 
++ confermaAbbonamento(): void @FXML
++ esci(): void @FXML
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>290</x>
+      <y>515</y>
+      <w>140</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>Abbonamento
+--
+- tipo: String
+- scadenza: LocalDate
+--
++ Abbonamento(durata: int, tipo: String)
++ Abbonamento(tipo: String, Scadenza: String)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>355</x>
+      <y>470</y>
+      <w>165</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>310.0;10.0;310.0;50.0;10.0;50.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>545</x>
+      <y>470</y>
+      <w>160</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;300.0;50.0;300.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>860</x>
+      <y>525</y>
+      <w>95</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>CryptPassword
+--
++ getMd5(input: String): String
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>730</x>
+      <y>190</y>
+      <w>185</w>
+      <h>115</h>
+    </coordinates>
+    <panel_attributes>HomeAmministratoreController
+--
+- app: MainApp
+- gestione: GestioneClienti
+- btnEsci: Button @FXML
+- elencoClienti: TableView&lt;Cliente&gt; @FXML
+- cognome: TableColumn&lt;Cliente, String&gt; @FXML
+- nome: TableColumn&lt;Cliente, String&gt; @FXML
+- dataDiNascita: TableColumn&lt;Cliente, String&gt; @FXML
+- scadenzaAbb: TableColumn&lt;Cliente, String&gt; @FXML
+--
++ rimuoviCliente(): void @FXML
++ esci(): void @FXML
++ riempiTabella(): void @FXML
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>665</x>
+      <y>155</y>
+      <w>170</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>320.0;70.0;320.0;10.0;10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>85</x>
+      <y>540</y>
+      <w>185</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>HomeClienteController
+--
+- app: MainApp
+- cliente: Cliente
+- btnEsci: Button @FXML
+- btnAcquista: Button @FXML
+- btnDisdici: Button @FXML
+- btnScheda: Button @FXML
+- schedaCliente: TableView&lt;Cliente&gt; @FXML
+- giorno1: TableColumn&lt;Cliente, String&gt; @FXML
+- giorno2: TableColumn&lt;Cliente, String&gt; @FXML
+- giorno3: TableColumn&lt;Cliente, String&gt; @FXML
+- lbMessaggio: Label @FXML
+- lbScadenzaAbb: Label @FXML
+--
++ setCliente(cliente: Cliente): void
++ paginaAbbonamento(): void
++ paginaSchede(): void
++ disdiciAbbonamento(): 
++ esci(): void @FXML
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>110</x>
+      <y>315</y>
+      <w>245</w>
+      <h>235</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>140.0;450.0;140.0;390.0;10.0;390.0;10.0;10.0;470.0;10.0;470.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>145</x>
+      <y>190</y>
+      <w>185</w>
+      <h>85</h>
+    </coordinates>
+    <panel_attributes>MainController
+--
+- app: MainApp
+- gestione: GestioneClienti
+- btnAccedi: Button @FXML
+- btnRegistrati: Button @FXML
+- usernameA: TextField @FXML
+- passwordA: PasswordField @FXML
+--
++ apriHome(): void @FXML
++ apriRegistrazione(): void @FXML
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>230</x>
+      <y>155</y>
+      <w>170</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0;320.0;10.0;320.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>440</x>
+      <y>30</y>
+      <w>185</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>RegistrazioneController
+--
+- app: MainApp
+- gestione: GestioneClienti
+- confermaRegistrazione: Button @FXML
+- usernameR: TestField @FXML
+- passwordR: PasswordField @FXML
+- confermaPassword: PasswordField @FXML
+- cognome: TextField @FXML
+- nome: TextField @FXML
+- codFis: TextField @FXML
+- dataDiNascita: DatePicker @FXML
+--
++ aggiungiCliente(): void @FXML
++ verificaDati(): boolean @FXML
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>410</x>
+      <y>0</y>
+      <w>130</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>240.0;60.0;240.0;10.0;10.0;10.0;10.0;320.0;240.0;320.0;240.0;360.0</additional_attributes>
+  </element>
+</diagram>

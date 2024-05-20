@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="435.0" prefWidth="723.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esempio.pages.AbbonamentoController">
+   <children>
+      <ImageView fitHeight="474.0" fitWidth="732.0" layoutX="-2.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/OIG2.jpg" />
+         </image>
+      </ImageView>
+      <ChoiceBox fx:id="tipoAbb" layoutX="146.0" layoutY="145.0" prefHeight="27.0" prefWidth="162.0" />
+      <ChoiceBox fx:id="durataAbb" layoutX="145.0" layoutY="303.0" prefHeight="27.0" prefWidth="162.0" />
+      <TextField fx:id="numCarta" layoutX="457.0" layoutY="131.0" prefHeight="27.0" prefWidth="162.0" />
+      <Label layoutX="486.0" layoutY="112.0" text="Numero di carta">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <TextField fx:id="scadenzaCarta" layoutX="456.0" layoutY="191.0" prefHeight="25.0" prefWidth="162.0" />
+      <TextField fx:id="cvc" layoutX="456.0" layoutY="253.0" prefHeight="25.0" prefWidth="162.0" />
+      <Label layoutX="525.0" layoutY="237.0" text="CVC">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Button layoutX="457.0" layoutY="353.0" mnemonicParsing="false" onAction="#confermaAbbonamento" prefHeight="27.0" prefWidth="162.0" text="Conferma pagamento" />
+      <Label layoutX="492.0" layoutY="172.0" text="Scadenza carta">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label layoutX="152.0" layoutY="121.0" text="Tipologia abbonamento">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label layoutX="140.0" layoutY="284.0" text="Durata abbonamento (mesi)">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Text fill="#f20000" layoutX="238.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ISCRIZIONE" textAlignment="CENTER" wrappingWidth="247.99998480081558">
+         <font>
+            <Font name="Bank Gothic Medium BT" size="36.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnEsci" layoutX="666.0" layoutY="391.0" mnemonicParsing="false" onAction="#esci" text="ESCI" />
+      <Label fx:id="prezzoTotale" layoutX="456.0" layoutY="303.0" prefHeight="27.0" prefWidth="162.0" />
+   </children>
+</AnchorPane>

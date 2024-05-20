@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="435.0" prefWidth="723.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esempio.pages.SchedeController">
+   <children>
+      <Button layoutX="666.0" layoutY="394.0" mnemonicParsing="false" onAction="#esci" text="ESCI" />
+      <RadioButton fx:id="rbCali" layoutX="91.0" layoutY="110.0" mnemonicParsing="false" text="Calisthenics">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="aa" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="rbBody" layoutX="308.0" layoutY="110.0" mnemonicParsing="false" text="Bodybuilding" toggleGroup="$aa">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></RadioButton>
+      <RadioButton fx:id="rbPower" layoutX="536.0" layoutY="110.0" mnemonicParsing="false" text="Powerlifting" toggleGroup="$aa">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></RadioButton>
+      <Button layoutX="275.0" layoutY="367.0" mnemonicParsing="false" onAction="#confermaScheda" text="Conferma tipologia scheda" />
+      <ImageView fitHeight="203.0" fitWidth="209.0" layoutX="37.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/Calisthenics.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="203.0" fitWidth="209.0" layoutX="259.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/Bodybuilding.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="203.0" fitWidth="203.0" layoutX="484.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/Powerlifting.jpg" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="173.0" layoutY="26.0" prefHeight="27.0" prefWidth="376.0" text="SCOLPISCI IL TUO CORPO" textAlignment="CENTER">
+         <font>
+            <Font name="Bank Gothic Medium BT" size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="70.0" layoutY="53.0" prefHeight="27.0" prefWidth="583.0" text="SCEGLI LA TUA AVVENTURA DI FITNESS" textAlignment="CENTER">
+         <font>
+            <Font name="Bank Gothic Medium BT" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
